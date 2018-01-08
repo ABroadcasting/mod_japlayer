@@ -11,6 +11,8 @@
 <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
 <description>MOD_JAPLAYER_XML_DESCRIPTION</description>
 <files>
+	<filename module="mod_japlayer">APlayer.min.js</filename>
+	<filename module="mod_japlayer">APlayer.min.js.map</filename>
 	<filename module="mod_japlayer">mod_japlayer.php</filename>
 	<filename module="mod_japlayer">mod_japlayer.xml</filename>
 	<filename>index.html</filename>
@@ -22,15 +24,20 @@
 			<field name="title" type="text" label="Title" description="Music title" />
 			<field name="description" type="text" label="Description" description="Music description" />
 			<field name="source" type="text" label="Source URL" description="Music source file" />
-            <field name="autoplay" type="text" label="Autoplay" description="Autoplay" />
+			<field name="autoplay" type="radio" default="false" class="btn-group btn-group-yesno" label="Autoplay" description="Autoplay" >
+				<option value="true">JYES</option>
+				<option value="false">JNO</option>
+			</field>
 		</fieldset>
 		<fieldset name="advanced">
-			<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
-            <field name="narrow" type="yesno" label="Narrow" description="Narrow style" />
-			<field name="color" type="text" label="Color" description="Player Color" />
-			<field name="pic" type="text" label="Picture" description="Music Picture" />
-			<field name="width" type="text" label="Width" description="Player width" />
-			<field name="height" type="text" label="Height" description="Playlist height" />
+            <field name="narrow" type="radio" default="false" class="btn-group btn-group-yesno" label="Narrow" description="Narrow style" >
+				<option value="true">JYES</option>
+				<option value="false">JNO</option>
+			</field>
+			<field name="color" type="color" default="#fff" label="Color" description="Player Color" />
+			<field name="pic" type="media" default="" label="Picture" description="Music Picture" />
+			<field name="width" type="integer" first="0" last="2048" step="20" default="300" label="Width" description="Player width" />
+			<field name="height" type="integer" first="0" last="2048" step="20" default="300" label="Height" description="Playlist height" />
 		</fieldset>
 	</fields>
 </config>

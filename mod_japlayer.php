@@ -16,7 +16,6 @@
 
 // no direct access
 defined('_JEXEC') or die ('Restricted Access');
-$exit = "No Player";
 
 /**
  * @param $color
@@ -29,18 +28,19 @@ $options['title']   =   $moduleParams->get('title', 'APlayer');
 $options['description']=$moduleParams->get('description', 'Default Music');
 $options['stream']  =   $moduleParams->get('source', 'music.mp3');
 $options['narrow']  =   $moduleParams->get('narrow', 'false');
+$options['width']   =   $moduleParams->get('autoplay', 'false');
 $options['pic']     =   $moduleParams->get('pic', 'music.png');
 $options['color']   =   $moduleParams->get('color', '#fff');
 $options['width']   =   $moduleParams->get('width', '100%');
 function StreamPlayer($options)
 {
-return '<div style="width:'.$options['width'].'; background:'.$options['color'].'; text-align:center;" id="japlayer"></div>
-<script src="APlayer.min.js"></script>
+return '<div style="width:'.$options['width'].'; background:'.$options['color'].'; text-align:center;" id="japlayer" class="aplayer"></div>
+<script src="modules/mod_japlayer/APlayer.min.js"></script>
 <script>
 var ap = new APlayer({
     element: document.getElementById(\'japlayer\'),
-    narrow: false,
-    autoplay: false,
+    narrow: \''.$options['narrow'].' \',
+    autoplay: \''.$options['autoplay'].' \',
     music: {
         title: \''.$options['title'].' \',
         author: \''.$options['description'].' \',
