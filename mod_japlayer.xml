@@ -20,16 +20,18 @@
 <config>
 	<fields name="params">
 		<fieldset name="basic">
-			<field name="title" type="text" label="Title" description="Title" />
-			<field name="description" type="text" label="Description" description="Description" />
-			<field name="source" type="text" label="Source" description="Source" />
+			<field name="title" type="text" label="Title" description="Music title" />
+			<field name="description" type="text" label="Description" description="Music description" />
+			<field name="source" type="text" label="Source URL" description="Music source file" />
+            <field name="autoplay" type="text" label="Source URL" description="Music source file" />
 		</fieldset>
 		<fieldset name="advanced">
 			<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
-			<field name="color" type="text" label="Title" description="Title" />
-			<field name="pic" type="text" label="Description" description="Description" />
-			<field name="width" type="text" label="Width" description="Width" />
-			<field name="height" type="text" label="Height" description="Height" />
+            <field name="narrow" type="yesno" label="Narrow" description="Narrow style" />
+			<field name="color" type="text" label="Color" description="Player Color" />
+			<field name="pic" type="text" label="Picture" description="Music Picture" />
+			<field name="width" type="text" label="Width" description="Player width" />
+			<field name="height" type="text" label="Height" description="Playlist height" />
 		</fieldset>
 	</fields>
 </config>

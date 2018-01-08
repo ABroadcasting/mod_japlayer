@@ -23,23 +23,18 @@ $exit = "No Player";
  * @param $case
  * @return string
  */
-function modjaplayer(&$subject, $config)
-{
-    parent::__construct($subject, $config);
-    $this->_plugin = JPluginHelper::getModule( 'system', 'livetex' );
-    $this->_params = new JParameter( $this->_plugin->params );
-}
-$options['title']="";
-$options['description']="";
-$options['stream']=;
-$narrow=""; //Optional narrow style
-$pic=""; // Optional, music picture
-$color="";
-$width="";
+$module = JModuleHelper::getModule('mod_japlayer');
+$moduleParams = new JRegistry($module->params);
+$options['title']   =   $moduleParams->get('title', 'APlayer');
+$options['description']=$moduleParams->get('description', 'Default Music');
+$options['stream']  =   $moduleParams->get('param_name', 'music.mp3');
+$options['narrow']  =   $moduleParams->get('param_name', 'false');
+$options['pic']     =   $moduleParams->get('param_name', 'music.png');
+$options['color']   =   $moduleParams->get('param_name', '#fff');
+$options['width']   =   $moduleParams->get('param_name', '100%');
 function StreamPlayer($options)
 {
-    
-return '<div style="width:'.$options['width'].'; background:'.$options['color'].'; text-align:center;" id="aplayer1" class="aplayer">
+return '<div style="width:'.$options['width'].'; background:'.$options['color'].'; text-align:center;" id="aplayer1" class="aplayer"></div>
 <script src="APlayer.min.js"></script>
 <script>
 var ap = new APlayer({
@@ -50,10 +45,8 @@ var ap = new APlayer({
         title: \''.$options['title'].' \',
         author: \''.$options['description'].' \',
         url: \''.$options['stream'].' \',
-        pic: \'http://7xifn9.com1.z0.glb.clouddn.com/Preparation.jpg\',  // Optional, music picture
+        pic: \''.$options['pic'].'\'
     }
 });
-</script></div>';}
+</script>';}
 echo $exit;
-
-?>
