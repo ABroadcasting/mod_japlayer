@@ -1,8 +1,8 @@
 ﻿<?php
 # @version		$version 0.1 Amvis United Company Limited  $
 # @copyright	Copyright (C) 2017 AUnited Co Ltd. All rights reserved.
-# @license		GNU/GPL, see LICENSE.php
-# Updated		5th January 2017
+# @license		MIT, see LICENSE.php
+# Updated		5th January 2018
 #
 # Site: http://aunited.ru
 # Email: info@aunited.ru
@@ -27,14 +27,14 @@ $module = JModuleHelper::getModule('mod_japlayer');
 $moduleParams = new JRegistry($module->params);
 $options['title']   =   $moduleParams->get('title', 'APlayer');
 $options['description']=$moduleParams->get('description', 'Default Music');
-$options['stream']  =   $moduleParams->get('param_name', 'music.mp3');
-$options['narrow']  =   $moduleParams->get('param_name', 'false');
-$options['pic']     =   $moduleParams->get('param_name', 'music.png');
-$options['color']   =   $moduleParams->get('param_name', '#fff');
-$options['width']   =   $moduleParams->get('param_name', '100%');
+$options['stream']  =   $moduleParams->get('source', 'music.mp3');
+$options['narrow']  =   $moduleParams->get('narrow', 'false');
+$options['pic']     =   $moduleParams->get('pic', 'music.png');
+$options['color']   =   $moduleParams->get('color', '#fff');
+$options['width']   =   $moduleParams->get('width', '100%');
 function StreamPlayer($options)
 {
-return '<div style="width:'.$options['width'].'; background:'.$options['color'].'; text-align:center;" id="japlayer""></div>
+return '<div style="width:'.$options['width'].'; background:'.$options['color'].'; text-align:center;" id="japlayer"></div>
 <script src="APlayer.min.js"></script>
 <script>
 var ap = new APlayer({
@@ -49,4 +49,4 @@ var ap = new APlayer({
     }
 });
 </script>';}
-echo $exit;
+echo StreamPlayer($options);
