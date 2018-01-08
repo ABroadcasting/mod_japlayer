@@ -34,11 +34,11 @@ $options['color']   =   $moduleParams->get('param_name', '#fff');
 $options['width']   =   $moduleParams->get('param_name', '100%');
 function StreamPlayer($options)
 {
-return '<div style="width:'.$options['width'].'; background:'.$options['color'].'; text-align:center;" id="aplayer1" class="aplayer"></div>
+return '<div style="width:'.$options['width'].'; background:'.$options['color'].'; text-align:center;" id="japlayer""></div>
 <script src="APlayer.min.js"></script>
 <script>
 var ap = new APlayer({
-    element: document.getElementById(\'aplayer1\'),
+    element: document.getElementById(\'japlayer\'),
     narrow: false,
     autoplay: false,
     music: {
