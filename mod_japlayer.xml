@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE extension PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://help.aunited.ru/dtd/joomla/3.0/module-install.dtd">
+<extension type="module" version="3.0">
+<name>MOD_JAPLAYER</name>
+<author>Vitaliy Zhukov</author>
+<creationDate>January 2018</creationDate>
+<authorEmail>info@aunited.ru</authorEmail>
+<authorUrl>http://aunited.ru</authorUrl>
+<version>0.1</version>
+<copyright>Copyright (c) 2018 AUnuted. All rights reserved.</copyright>
+<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+<description>MOD_JAPLAYER_XML_DESCRIPTION</description>
+<files>
+	<folder>language</folder>
+	<filename module="mod_japlayer">mod_japlayer.php</filename>
+	<filename module="mod_japlayer">mod_japlayer.xml</filename>
+	<filename>index.html</filename>
+</files>
+
+<config>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="title" type="text" label="Title" description="Title" />
+			<field name="description" type="text" label="Description" description="Description" />
+			<field name="source" type="text" label="Source" description="Source" />
+		</fieldset>
+		<fieldset name="advanced">
+			<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+			<field name="color" type="text" label="Title" description="Title" />
+			<field name="pic" type="text" label="Description" description="Description" />
+			<field name="width" type="text" label="Width" description="Width" />
+			<field name="height" type="text" label="Height" description="Height" />
+		</fieldset>
+	</fields>
+</config>
+
+<updateservers>
+	<server type="extension" priority="1" name="mod_japlayer"><![CDATA[http://help.aunited.ru/japlayer/update/JAPlayer-update.xml]]></server>
+</updateservers>
+
+</extension>
