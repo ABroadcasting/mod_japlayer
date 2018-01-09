@@ -18,27 +18,32 @@
 	<filename module="mod_japlayer">mod_japlayer.xml</filename>
 	<filename>index.html</filename>
 </files>
-
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_japlayer.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_japlayer.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.mod_japlayer.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.mod_japlayer.sys.ini</language>
+	</languages>
 <config>
 	<fields name="params">
 		<fieldset name="basic">
-			<field name="title" type="text" label="Title" description="Music title" />
-			<field name="description" type="text" label="Description" description="Music description" />
-			<field name="source" type="text" label="Source URL" description="Music source file" />
-			<field name="autoplay" type="radio" default="false" class="btn-group btn-group-yesno" label="Autoplay" description="Autoplay" >
+			<field name="title" type="text" label="JGLOBAL_TITLE" description="MOD_JAPLAYER_TITLE_DESC" />
+			<field name="description" type="text" label="JGLOBAL_DESCRIPTION" description="MOD_JAPLAYER_DESC_DESC" />
+			<field name="source" type="text" label="MOD_JAPLAYER_SOURCE" description="MOD_JAPLAYER_SOURCE_DESC" />
+			<field name="autoplay" type="radio" default="false" class="btn-group btn-group-yesno" label="MOD_JAPLAYER_AUTOPLAY" description="MOD_JAPLAYER_AUTOPLAY_DESC" >
 				<option value="1">JYES</option>
 				<option value="0">JNO</option>
 			</field>
 		</fieldset>
 		<fieldset name="advanced">
-            <field name="narrow" type="radio" default="0" class="btn-group btn-group-yesno" label="Narrow" description="Narrow style" >
+            <field name="narrow" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_JAPLAYER_NARROW" description="MOD_JAPLAYER_NARROW_DESC" >
 				<option value="1">JYES</option>
 				<option value="0">JNO</option>
 			</field>
-			<field name="color" type="color" default="#fff" label="Color" description="Player Color" />
-			<field name="pic" type="media" default="" label="Picture" description="Music Picture" />
-			<field name="width" type="integer" first="0" last="2048" step="20" default="300" label="Width" description="Player width" />
-			<field name="height" type="integer" first="0" last="2048" step="20" default="300" label="Height" description="Playlist height" />
+			<field name="color" type="color" default="#fff" label="MOD_JAPLAYER_COLOR" description="MOD_JAPLAYER_COLOR_DESC" />
+			<field name="pic" type="media" default="" label="MOD_JAPLAYER_PICTURE" description="MOD_JAPLAYER_PICTURE_DESC" />
+			<field name="width" type="integer" first="0" last="2048" step="20" default="300" label="MOD_JAPLAYER_WIDTH" description="MOD_JAPLAYER_WIDTH_DESC" />
+			<field name="height" type="integer" first="0" last="2048" step="20" default="300" label="MOD_JAPLAYER_HEIGHT" description="MOD_JAPLAYER_HEIGHT_DESC" />
 		</fieldset>
 	</fields>
 </config>
