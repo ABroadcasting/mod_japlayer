@@ -17,21 +17,41 @@
 // no direct access
 defined('_JEXEC') or die ('Restricted Access');
 
-/**
- * @param $color
- * @param $case
- * @return string
- */
 $module = JModuleHelper::getModule('mod_japlayer');
 $moduleParams = new JRegistry($module->params);
 $options['title']   =   $moduleParams->get('title', 'APlayer');
 $options['description']=$moduleParams->get('description', 'Default Music');
 $options['stream']  =   $moduleParams->get('source', 'music.mp3');
-$options['narrow']  =   $moduleParams->get('narrow', 'false');
+$options['narrow']  =   $moduleParams->get('narrow', '0');
 $options['autoplay']   =   $moduleParams->get('autoplay', 'false');
 $options['pic']     =   $moduleParams->get('pic', '');
 $options['color']   =   $moduleParams->get('color', '#fff');
 $options['width']   =   $moduleParams->get('width', '100%');
+
+//Logical exceptions
+if ($options['narrow'] == 1)
+{
+    $options['width'] = "0";
+    $options['narrow'] = "true";
+}
+else
+{
+    $options['narrow'] = "false";
+};
+
+if ($options['autoplay'] == 1)
+{
+    $options['autoplay'] = "true";
+}
+else
+{
+    $options['autoplay'] = "false";
+};
+
+/**
+ * @param $options
+ * @return string
+ */
 function StreamPlayer($options)
 {
 return '<div style="width:'.$options['width'].'px; background:'.$options['color'].'; text-align:center;" id="japlayer" class="aplayer"></div>

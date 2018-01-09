@@ -11,6 +11,7 @@
 <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
 <description>MOD_JAPLAYER_XML_DESCRIPTION</description>
 <files>
+	<folder>language</folder>
 	<filename module="mod_japlayer">APlayer.min.js</filename>
 	<filename module="mod_japlayer">APlayer.min.js.map</filename>
 	<filename module="mod_japlayer">mod_japlayer.php</filename>
@@ -25,14 +26,14 @@
 			<field name="description" type="text" label="Description" description="Music description" />
 			<field name="source" type="text" label="Source URL" description="Music source file" />
 			<field name="autoplay" type="radio" default="false" class="btn-group btn-group-yesno" label="Autoplay" description="Autoplay" >
-				<option value="true">JYES</option>
-				<option value="false">JNO</option>
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
 			</field>
 		</fieldset>
 		<fieldset name="advanced">
-            <field name="narrow" type="radio" default="false" class="btn-group btn-group-yesno" label="Narrow" description="Narrow style" >
-				<option value="true">JYES</option>
-				<option value="false">JNO</option>
+            <field name="narrow" type="radio" default="0" class="btn-group btn-group-yesno" label="Narrow" description="Narrow style" >
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
 			</field>
 			<field name="color" type="color" default="#fff" label="Color" description="Player Color" />
 			<field name="pic" type="media" default="" label="Picture" description="Music Picture" />
