@@ -11,6 +11,7 @@
 <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
 <description>MOD_JAPLAYER_XML_DESCRIPTION</description>
 <files>
+    <folder>assests</folder>
 	<folder>language</folder>
 	<filename module="mod_japlayer">APlayer.min.js</filename>
 	<filename module="mod_japlayer">APlayer.min.js.map</filename>
