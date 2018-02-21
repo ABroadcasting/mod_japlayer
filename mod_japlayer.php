@@ -19,10 +19,11 @@ defined('_JEXEC') or die ('Restricted Access');
 
 $module = JModuleHelper::getModule('mod_japlayer');
 $moduleParams = new JRegistry($module->params);
+$home="modules/mod_japlayer";
 $options['stream']   =   $moduleParams->get('stream', 0);
 $options['title']   =   $moduleParams->get('title', 'APlayer');
 $options['description']=$moduleParams->get('description', 'Default Music');
-$options['stream']  =   $moduleParams->get('source', 'music.mp3');
+$options['source']  =   $moduleParams->get('source', 'music.mp3');
 $options['narrow']  =   $moduleParams->get('narrow', '0');
 $options['autoplay']   =   $moduleParams->get('autoplay', 'false');
 $options['pic']     =   $moduleParams->get('pic', '');
@@ -70,7 +71,7 @@ var ap = new APlayer({
     music: {
         title: \''.$options['title'].'\',
         author: \''.$options['description'].'\',
-        url: \''.$options['stream'].'\',
+        url: \''.$options['source'].'\',
         pic: \''.$options['pic'].'\'
     }
 });
