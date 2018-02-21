@@ -8,7 +8,7 @@
 # @version		1.1.0
 #
 # Usage: playlist.php?name=playlist&pltype=m3u&stream=myradio.tld:8000/myradio
-//m3u, m3u8, wpl, smil, zpl, xfps, pls, ram, asx, qtl;
+//m3u, m3u8, wpl, smil, zpl, xspf, pls, ram, asx, qtl;
 //debug string
 //ini_set('display_errors', '0');
 
@@ -75,7 +75,7 @@ Version=2";
 #EXTVLCOPT:network-caching=1000
 $stream";
 break;
-	case "xfps": $output="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+	case "xspf": $output="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <playlist version=\"1\" xmlns=\"http://xspf.org/ns/0/\">
   <trackList>
     <track>
@@ -98,7 +98,7 @@ src=\"$stream\"
 };
 
 #Making the file
-header("Content-Type: application/download; charset=utf-8");
+header("Content-Type: text/download; charset=utf-8");
 header("Content-Disposition: attachment; filename=$name.$pltype");
 print ($output);
 ?>

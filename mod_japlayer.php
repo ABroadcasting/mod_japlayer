@@ -77,12 +77,12 @@ var ap = new APlayer({
 });
 </script>';}
 function Playlists($options){
-    if($options['stream']){
-return "<div>
+    $options['title']=urlencode($options['title']); //title must be encoded
+    if($options['stream']){ return "<div>
 <a href='modules/mod_japlayer/assests/playlist.php?name=".$options['title']."&pltype=m3u&stream=".$options['source']."'><img src='modules/mod_japlayer/assests/aimp3.svg' width='32px' /></a>
 <a href='modules/mod_japlayer/assests/playlist.php?name=".$options['title']."&pltype=wpl&stream=".$options['source']."'><img src='modules/mod_japlayer/assests/wmp.svg' width='32px' /></a>
 <a href='modules/mod_japlayer/assests/playlist.php?name=".$options['title']."&pltype=qtl&stream=".$options['source']."'><img src='modules/mod_japlayer/assests/quicktime.svg' width='32px' /></a>
-<a href='modules/mod_japlayer/assests/playlist.php?name=".$options['title']."&pltype=xfps&stream=".$options['source']."'><img src='modules/mod_japlayer/assests/amarok.svg' width='32px' /></a>
+<a href='modules/mod_japlayer/assests/playlist.php?name=".$options['title']."&pltype=xspf&stream=".$options['source']."'><img src='modules/mod_japlayer/assests/amarok.svg' width='32px' /></a>
 </div>";}
 else {return "";}
 }
