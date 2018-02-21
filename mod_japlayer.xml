@@ -27,6 +27,10 @@
 <config>
 	<fields name="params">
 		<fieldset name="basic">
+			<field name="stream" type="radio" default="false" class="btn-group btn-group-yesno" label="MOD_JAPLAYER_STREAM" description="MOD_JAPLAYER_STREAM_DESC" >
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
 			<field name="title" type="text" label="JGLOBAL_TITLE" description="MOD_JAPLAYER_TITLE_DESC" />
 			<field name="description" type="text" label="JGLOBAL_DESCRIPTION" description="MOD_JAPLAYER_DESC_DESC" />
 			<field name="source" type="text" label="MOD_JAPLAYER_SOURCE" description="MOD_JAPLAYER_SOURCE_DESC" />
@@ -42,6 +46,10 @@
 			</field>
 			<field name="color" type="color" default="#fff" label="MOD_JAPLAYER_COLOR" description="MOD_JAPLAYER_COLOR_DESC" />
 			<field name="pic" type="media" default="" label="MOD_JAPLAYER_PICTURE" description="MOD_JAPLAYER_PICTURE_DESC" />
+			<field name="measurement" type="radio" default="px" class="btn-group btn-group-yesno" label="MOD_JAPLAYER_MEASUREMENT" description="MOD_JAPLAYER_MEASUREMENT_DESC" >
+				<option value="px">MOD_JAPLAYER_PIXELS</option>
+				<option value="%">%</option>
+			</field>
 			<field name="width" type="integer" first="0" last="2048" step="20" default="300" label="MOD_JAPLAYER_WIDTH" description="MOD_JAPLAYER_WIDTH_DESC" />
 			<field name="height" type="integer" first="0" last="2048" step="20" default="300" label="MOD_JAPLAYER_HEIGHT" description="MOD_JAPLAYER_HEIGHT_DESC" />
 		</fieldset>

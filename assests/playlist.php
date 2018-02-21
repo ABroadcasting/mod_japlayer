@@ -8,7 +8,9 @@
 # @version		1.1.0
 #
 # Usage: playlist.php?name=playlist&pltype=m3u&stream=myradio.tld:8000/myradio
-ini_set('display_errors', '0');
+//m3u, m3u8, wpl, smil, zpl, xfps, pls, ram, asx, qtl;
+//debug string
+//ini_set('display_errors', '0');
 
 #define defaults
 $type="audio";
@@ -68,7 +70,7 @@ Title1=$name
 NumberOfEntries=1
 Version=2";
 	break;
-	case m3u8: $output="#EXTM3U
+	case 'm3u8': $output="#EXTM3U
 #EXTINF:0,$name
 #EXTVLCOPT:network-caching=1000
 $stream";

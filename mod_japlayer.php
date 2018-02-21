@@ -19,6 +19,7 @@ defined('_JEXEC') or die ('Restricted Access');
 
 $module = JModuleHelper::getModule('mod_japlayer');
 $moduleParams = new JRegistry($module->params);
+$options['stream']   =   $moduleParams->get('stream', 0);
 $options['title']   =   $moduleParams->get('title', 'APlayer');
 $options['description']=$moduleParams->get('description', 'Default Music');
 $options['stream']  =   $moduleParams->get('source', 'music.mp3');
@@ -26,7 +27,8 @@ $options['narrow']  =   $moduleParams->get('narrow', '0');
 $options['autoplay']   =   $moduleParams->get('autoplay', 'false');
 $options['pic']     =   $moduleParams->get('pic', '');
 $options['color']   =   $moduleParams->get('color', '#fff');
-$options['width']   =   $moduleParams->get('width', '100%');
+$options['width']   =   $moduleParams->get('width', '100');
+$options['measurement']   =   $moduleParams->get('measurement', 'px');
 
 //Logical exceptions
 if ($options['narrow'] == 1)
@@ -48,13 +50,17 @@ else
     $options['autoplay'] = "false";
 };
 
+if($options['stream']){
+    echo "";
+};
+
 /**
  * @param $options
  * @return string
  */
 function StreamPlayer($options)
 {
-return '<div style="width:'.$options['width'].'px; background:'.$options['color'].'; text-align:center;" id="japlayer" class="aplayer"></div>
+return '<div style="width:100%; background:'.$options['color'].'; text-align:center;" id="japlayer" class="aplayer"></div>
 <script src="modules/mod_japlayer/APlayer.min.js"></script>
 <script>
 var ap = new APlayer({
@@ -69,4 +75,15 @@ var ap = new APlayer({
     }
 });
 </script>';}
-echo StreamPlayer($options);
+function Playlists($options){
+    if($options['stream']){
+return "<div>
+<a href='modules/mod_japlayer/assests/playlist.php?name=".$options['title']."&pltype=m3u&stream=".$options['source']."'><img src='modules/mod_japlayer/assests/aimp3.svg' width='32px' /></a>
+<a href='modules/mod_japlayer/assests/playlist.php?name=".$options['title']."&pltype=wpl&stream=".$options['source']."'><img src='modules/mod_japlayer/assests/wmp.svg' width='32px' /></a>
+<a href='modules/mod_japlayer/assests/playlist.php?name=".$options['title']."&pltype=qtl&stream=".$options['source']."'><img src='modules/mod_japlayer/assests/quicktime.svg' width='32px' /></a>
+<a href='modules/mod_japlayer/assests/playlist.php?name=".$options['title']."&pltype=xfps&stream=".$options['source']."'><img src='modules/mod_japlayer/assests/amarok.svg' width='32px' /></a>
+</div>";}
+else {return "";}
+}
+echo '<div style="width:'.$options['width'].$options['measurement'].';">'.StreamPlayer($options).Playlists($options).'</div>';
+
